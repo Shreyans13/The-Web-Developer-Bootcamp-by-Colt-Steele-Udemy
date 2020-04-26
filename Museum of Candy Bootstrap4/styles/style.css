@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap");
+body {
+  background: #f5d9d5;
+  font-family: "Nunito", sans-serif;
+}
+body .custom-text h2 {
+  color: #EA1C2C;
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+body .custom-text p {
+  color: #f498b8;
+  font-weight: 100;
+  font-size: 1.125rem;
+  line-height: 2;
+}
+body #mainNavbar {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+body #mainNavbar .nav-link {
+  color: white;
+}
+body #mainNavbar .nav-link:hover {
+  color: #EA1C2C;
+}
+body #mainNavbar .navbar-brand {
+  color: #EA1C2C;
+  font-size: 1.5rem;
+}
+body #headingGroup span {
+  color: #EA1C2C;
+}
+body #headingGroup h2 {
+  font-weight: 100;
+  font-size: 3rem;
+}
+body .navbar.scrolled {
+  background: #dec0de;
+  transition: background 200ms;
+}
+body .custom-margin {
+  margin-top: 100px;
+}
+@media (max-width: 1300px) {
+  body #headingGroup h2 {
+    font-weight: 100;
+    font-size: 2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

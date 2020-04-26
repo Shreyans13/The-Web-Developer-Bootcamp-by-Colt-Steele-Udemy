@@ -1,0 +1,22 @@
+body {
+	font-family: 'Trade Winds' ;
+}
+/*--------------------------------------*/
+p {
+
+	/*LOL*/ 
+	/*Content - Width and Heights*/
+	width: 50%;
+	/*Border*/
+
+	border: 2px solid blue;
+
+	/*Padding*/
+	padding-left: 100px;
+	/*Margin*/
+	/*margin: 100px;*/
+	/*margin-top: 50px;*/
+	/*margin: 20px 40px 500px 100px;*/
+	/*      top  right down left*/
+	margin: 10 auto 0 auto;
+}

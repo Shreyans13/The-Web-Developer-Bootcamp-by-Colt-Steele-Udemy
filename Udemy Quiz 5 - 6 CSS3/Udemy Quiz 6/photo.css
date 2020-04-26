@@ -1,0 +1,14 @@
+p{
+		font-family: 'Trade Winds' ;
+	font-size: 50px;
+	font-weight: 25%;
+	border-bottom: 2px solid #f1f1f1;
+	width: 50%;
+	padding-bottom: 20px;
+}
+img {
+	width: 30%;
+	float: lext;
+	margin: 1%;
+	/*30% * 3*/
+}

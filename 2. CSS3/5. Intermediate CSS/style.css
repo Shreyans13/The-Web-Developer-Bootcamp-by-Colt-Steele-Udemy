@@ -1,0 +1,45 @@
+/*font family*/
+body {
+	font-family: 'Trade Winds' ;
+}
+/*font size*/
+body {
+	font-size: 10px;
+}
+h1 {
+	font-size: 5em;
+	/*em is dynamic*/
+}
+
+p {
+	font-size: 2.0em;
+}
+span {
+	font-size: 1em;
+}
+/*font weight*/
+
+p{
+	font-weight: 800; 
+	/*100 to 800 or bold,normal etc*/
+}
+
+/*line height*/
+p {
+	line-height: 1.5;
+}
+/*text align*/
+h1 {
+	text-align: center;
+}
+p {
+	text-align: right;
+}
+/*text decoration*/
+p{
+	text-decoration: underline;
+}
+
+h1{
+	text-decoration: line-through;
+}

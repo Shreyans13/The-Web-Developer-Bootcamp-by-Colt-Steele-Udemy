@@ -1,0 +1,66 @@
+/*
+The three color systems
+
+1. Normal Colors
+	red, green, blue, orange etc
+
+2. Hexa Decimal System
+	#6digits of hexadecimal system
+
+	HexaDecimal 0 1 2 3 4 5 6 7 8 9 A B C D E F
+
+	#00cc00
+
+3. rgb
+	It has 3 channels of red green blue ranged from 0-255
+	rgb([RED 0-255], [GREEN 0-255], [BLUE 0-255])
+
+	rgb(0, 150, 150)
+
+4. rgba
+	rgb with a extra channel to make a transparent color
+	rgba([RED 0-255], [GREEN 0-255], [BLUE 0-255], [ALPHA 0-1])
+	rgba(0,200,100,.7)
+*/
+
+h1{
+	color: blue;
+	/*Color System 1*/
+}
+li{
+	color: #ff0000;
+	/*Color System 2*/
+}
+h4{
+	color: rgb(0,150,150);
+	/*Color System 3*/
+}
+h5{
+	color: rgba(0,200,100,.9);
+	/*Color System 4*/
+}
+
+/*Background color or image-url*/
+body{
+	/*background: url(https://images4.alphacoders.com/959/959338.png);*/
+	background: pink;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+ul{
+	background: rgba(0,0,255,.3);
+}
+/*
+Border
+	-Width
+	-Color
+	-style
+*/
+
+h5{/*
+	border-color: purple;
+	border-width: 5px: 
+	border-style: dashed;*/
+
+	border: 5px dashed rgba(0,100,255,.6);
+}
