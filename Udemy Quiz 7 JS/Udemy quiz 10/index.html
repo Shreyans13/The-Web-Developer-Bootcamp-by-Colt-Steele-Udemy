@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Loops</h1>
+
+	<script type="text/javascript">
+		console.log("\nPrint all numbers between -10 and 19")
+		let i = -10
+		let result = ""
+		while(i < 20){
+			result += i + " ";
+			i++;
+		}
+		console.log(result)
+		console.log("\nPrint all even numbers between 10 and 40")
+		i = 10
+		result = ""
+		while(i <= 40){
+			result += i + " ";
+			i = i + 2
+		}
+		console.log(result)
+		console.log("\nPrint all odd numbers between 300 and 333")
+		i = 300
+		result = ""
+		while(i <= 333){
+			result += (i%2!=0)?i + " ":""
+			i++
+		}
+		console.log(result)
+		console.log("\nPrint all numbers divisible by 5 and 3 between 5 to 50")
+		i = 5
+		result = ""
+		while(i <= 50){
+			result += (i % 5 == 0 && i % 3 == 0)?i + " ":""
+			i++;
+		}
+		console.log(result)
+	</script>
+</body>
+</html>
