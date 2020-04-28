@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap')
+
+*
+	font-family: 'Delius Unicase', cursive
+	text-transform: uppercase
+	margin: 0
+	padding: 0
+	body
+		background-color: #232323
+		h1
+			color: white
+			text-align: center
+			background-color: steelblue
+			margin: 0
+			line-height: 1.5
+			padding: 20px 0
+			#colorDisplay
+				font-size: 200%
+
+		#strip
+			background: white
+			height: 30px
+			text-align: center
+			#message
+				display: inline-block
+				width: 20%
+			.selected
+				background:  steelblue
+				color: white
+
+			button
+				// padding to be given
+				border: none
+				background: none
+				height: 100%
+				color: steelblue
+				letter-spacing: 1.2px
+				font-size: inherit
+				transition: all 0.4s
+				&:hover
+					color: white
+					background-color: steelblue
+		#container
+			padding-top: 40px
+			max-width: 600px
+			margin: 0 auto
+			.square
+				width: 30%
+				background: purple
+				padding-bottom: 30%
+				float: left
+				margin: 1.66%
+				border-radius: 15%
+				transition: background 0.5s
