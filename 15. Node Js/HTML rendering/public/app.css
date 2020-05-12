@@ -1,0 +1,19 @@
+html {
+	margin: 0;
+	padding: 0;
+}
+body,
+h1,
+h2,p{
+	color: yellow;
+	background-color: #030303;
+}
+img {
+	width: 75em;
+	height: auto;
+}
+.footer {
+	margin: 0 auto;
+	background-color: grey;
+	color: black;
+}

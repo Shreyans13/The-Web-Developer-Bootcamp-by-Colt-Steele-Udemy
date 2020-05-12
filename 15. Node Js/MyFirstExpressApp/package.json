@@ -1,0 +1,15 @@
+{
+  "name": "my-first-express-app",
+  "version": "1.0.0",
+  "description": "Udemy Course",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shreyans Jain",
+  "license": "ISC"
+}

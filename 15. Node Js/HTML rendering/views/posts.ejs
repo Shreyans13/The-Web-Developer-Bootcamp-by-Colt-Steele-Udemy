@@ -1,0 +1,10 @@
+<%- include("partials/header") %>
+
+<% for(let i = 0; i < posts.length; i++){ %>
+	<h2> <%= posts[i].title %> </h2>
+	<p>------------------------------------- <%= posts[i].author %> </p>
+	<hr>
+<% } %>
+
+
+<%- include("partials/footer") %>
