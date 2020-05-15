@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<div class="container">
+
+	<header class="jumbotron">
+			<h1 class="display-4"> Welcome to Yelp Camp </h1>
+			<p class="lead">View are hand picked grounds from all over the world</p>
+			<a class="btn btn-primary" href='/campgrounds/new'>Add New Campground</a>
+	</header>
+
+	<div class="row text-center" >	
+
+		<% for(let i = 0; i < campgrounds.length ; i++){ %>
+			<div class="col-md-3 col-sm-6" >
+				<div class="card">
+					<img src="<%= campgrounds[i].image %>" class="card-img-top img-thumbnail" alt="...">
+					<div class="card-body">
+						<h5 class="card-title"><%= campgrounds[i].name %></h5>
+					</div>
+				</div>
+			</div> 	
+		<% } %>
+	</div>
+</div>
+
+<%- include('partials/footer') %>
