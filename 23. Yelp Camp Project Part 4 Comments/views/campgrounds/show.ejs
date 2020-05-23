@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<h1><%=campground.name %></h1>
+
+<img src="<%= campground.image%>">
+<p>
+	<a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add new comment</a>
+</p>
+<p><%= campground.description %></p>
+<% for (let i = 0; i < campground.comments.length ; i++) { %>
+	<p>
+		<strong><%= campground.comments[i].author %></strong> - <%= campground.comments[i].text %>
+	</p>
+<% } %>
+<%- include('../partials/footer') %>
