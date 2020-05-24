@@ -1,9 +1,10 @@
-let app          = require(`express`)(),
+let express      = require(`express`),
     bodyParser   = require('body-parser'),
     mongoose     = require('mongoose'),
-    Campground   = require('./models/campgrounds');
-    Comment      = require('./models/comment')
-    seedDB       = require('./seeds');
+    Campground   = require('./models/campgrounds'),
+    Comment      = require('./models/comment'),
+    seedDB       = require('./seeds')
+    app          = express()
 
 const PORT = 3000
 
@@ -19,6 +20,7 @@ app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
 	res.render('landing')
