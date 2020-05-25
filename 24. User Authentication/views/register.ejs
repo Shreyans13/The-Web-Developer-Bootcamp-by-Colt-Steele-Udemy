@@ -1,0 +1,19 @@
+<%- include('partials/header')%>
+	<div class="container">
+		<h2>Sign up form</h2>
+		<!-- The above form looks like this -->
+		<form action="/register" method="POST">
+		  <div class="row">
+		    <div class="six columns">
+		      <label for="username">Username</label>
+		      <input class="u-full-width" type="text" placeholder="username" name="username">
+		    </div>
+		    <div class="six columns">
+				<label for="password">Password</label>
+		  		<input class="u-full-width" type="password" placeholder="password" name="password">
+		    </div>
+		  </div>
+		  <input class="button-primary" type="submit" value="Submit">
+		</form>
+	</div>
+<%- include('partials/footer')%>
