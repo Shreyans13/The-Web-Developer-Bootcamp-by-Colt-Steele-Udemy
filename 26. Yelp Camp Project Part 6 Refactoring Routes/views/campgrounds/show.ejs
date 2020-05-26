@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">Yelp Camp</p>
+			<div class="list-group">
+				<li class="list-group-item active">Info 1</li>
+				<li class="list-group-item">Info 2</li>
+				<li class="list-group-item">Info 3</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="card" style="width: 100%;">
+				<img class="card-img-top" src="<%= campground.image%>" >
+				<!-- style="width: 820px; height: 520px" -->
+				<div class="caption-full p-4">
+					<h5 class="text-right text-monospace">&#8377;9.00/night</h5>
+					<h4><a href=""><%=campground.name %></a></h4>
+					<p><%= campground.description %></p>
+				</div>
+			</div>
+			<div class="card bg-light p-4" style="width: 100%;">
+				<div class="text-right">
+					<a class="btn btn-success mt-3" href="/campgrounds/<%= campground._id %>/comments/new">Add a review</a>
+				</div>
+				<hr>
+				<% for (let i = 0; i < campground.comments.length ; i++) { %>
+					<div class="row">
+						<div class="col-md-12">
+							<strong><%= campground.comments[i].author %></strong>
+							<span class="float-right">10 days ago</span>
+							<p>
+								<%= campground.comments[i].text %>
+							</p>
+						</div>
+					</div>
+				<% } %>
+			</div>
+		</div> 
+	</div>
+</div>
+
+<%- include('../partials/footer') %>
