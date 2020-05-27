@@ -8,6 +8,7 @@ let express      	= require(`express`),
     LocalStratergy 	= require('passport-local'),
     User 			= require('./models/user'),
     expressSession 	= require('express-session'),
+    methodOverride  = require('method-override'),
     app          	= express()
 
 let indexRoutes 		= require('./routes/index'),
@@ -33,6 +34,7 @@ app.use(expressSession({
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(methodOverride('_method'))
 
 app.set('view engine', 'ejs')
 

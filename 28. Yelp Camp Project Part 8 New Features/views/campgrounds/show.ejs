@@ -19,9 +19,17 @@
 					<p class="lead"><%= campground.description %></p>
 					<!-- <p class="font-italic text-monospace"> Submitted By<%= campground.author.username%></p> -->
 					<blockquote class="blockquote">
-					<footer class="blockquote-footer font-weight-bolder" style="font-size: 1.2rem">Submitted By <cite title="Source Title"><%= campground.author.username%></cite></footer></blockquote>
+						<footer class="blockquote-footer font-weight-bolder" style="font-size: 1.2rem">
+							Submitted By <cite title="Source Title"><%= campground.author.username%></cite>
+						</footer>
+					</blockquote>
+					<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" class="list-inline">
+						<a href="/campgrounds/<%= campground._id %>/edit" type="button" class="btn btn-outline-warning px-5 rounded-lg list-inline-item">Edit</a>
+						<button class="btn btn-danger px-5 rounded-lg list-inline-item">Delete</button>
+					</form>
 				</div>
 			</div>
+			<br>
 			<div class="card bg-light p-4" style="width: 100%;">
 				<div class="text-right">
 					<a class="btn btn-success mt-3" href="/campgrounds/<%= campground._id %>/comments/new">Add a review</a>
