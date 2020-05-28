@@ -2,35 +2,9 @@ let express 		= require('express'),
 	commentRoutes 	= express.Router({mergeParams: true}),
 	Campground 		= require('../models/campgrounds'),
 	Comment 		= require('../models/comment')
+	middleware		= require('../middleware')
 
-let isLoggedIn = (req, res, next) => {
-	if (req.isAuthenticated()) {
-		return next()
-	}
-	res.redirect('/login')
-}
-
-let checkCommentOwnership = (req, res, next) => {
-	// is logged in or not
-	if (req.isAuthenticated()) {
-		// post is owned or not
-		Comment.findById(req.params.comment_id, (err, foundComment) => {
-			if (err) {
-				res.redirect('back')
-			} else {
-				if (foundComment.author.id.equals(req.user.id)) {
-					next()
-				} else {
-					res.redirect('back')
-				}
-			}
-		})
-	} else {
-		res.redirect('back')
-	}
-}
-
-commentRoutes.get('/new', isLoggedIn ,(req, res) => {
+commentRoutes.get('/new', middleware.isLoggedIn ,(req, res) => {
 	Campground.findById(req.params.id, (err, campground) => {
 		if(err){
 			console.log(err)
@@ -40,7 +14,7 @@ commentRoutes.get('/new', isLoggedIn ,(req, res) => {
 	})
 })
 
-commentRoutes.post('/', isLoggedIn ,(req, res) => {
+commentRoutes.post('/', middleware.isLoggedIn ,(req, res) => {
 	Campground.findById(req.params.id, (err, campground) => {
 		if(err) {
 			console.log(err)
@@ -63,7 +37,7 @@ commentRoutes.post('/', isLoggedIn ,(req, res) => {
 	})
 })
 
-commentRoutes.get('/:comment_id/edit', checkCommentOwnership , (req, res) => {
+commentRoutes.get('/:comment_id/edit', middleware.checkCommentOwnership , (req, res) => {
 	Comment.findById(req.params.comment_id, (err, foundComment) => {
 		if(err) {
 			res.redirect('back')
@@ -73,7 +47,7 @@ commentRoutes.get('/:comment_id/edit', checkCommentOwnership , (req, res) => {
 	})
 })
 
-commentRoutes.put('/:comment_id',checkCommentOwnership , (req,res) => {
+commentRoutes.put('/:comment_id', middleware.checkCommentOwnership , (req,res) => {
 	Comment.findByIdAndUpdate(req.params.comment_id, req.body.comments, (err, updatedComment) => {
 		if (err) {
 			res.redirect('back')
@@ -83,7 +57,7 @@ commentRoutes.put('/:comment_id',checkCommentOwnership , (req,res) => {
 	})
 })
 
-commentRoutes.delete('/:comment_id',checkCommentOwnership , (req, res) =>{
+commentRoutes.delete('/:comment_id',middleware.checkCommentOwnership , (req, res) =>{
 	Comment.findByIdAndRemove(req.params.comment_id, (err) => {
 		if(err) {
 			// res.redirect('back')

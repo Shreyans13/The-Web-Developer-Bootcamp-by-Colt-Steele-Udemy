@@ -3,13 +3,6 @@ let express 		= require('express'),
 	passport 		= require('passport'),
 	User 			= require('../models/user')
 
-let isLoggedIn = (req, res, next) => {
-	if (req.isAuthenticated()) {
-		return next()
-	}
-	res.redirect('/login')
-}
-
 indexRoutes.get('/', (req, res) => {
 	res.render('landing')
 })

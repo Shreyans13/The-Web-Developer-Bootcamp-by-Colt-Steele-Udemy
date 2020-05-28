@@ -1,33 +1,7 @@
 let express 			= require('express')
 let campgroundRoutes 	= express.Router();
 let Campground 			= require('../models/campgrounds')
-
-let isLoggedIn = (req, res, next) => {
-	if (req.isAuthenticated()) {
-		return next()
-	}
-	res.redirect('/login')
-}
-
-let checkCampgroundOwnership = (req, res, next) => {
-	// is logged in or not
-	if (req.isAuthenticated()) {
-		// post is owned or not
-		Campground.findById(req.params.id, (err, foundCampground) => {
-			if (err) {
-				res.redirect('back')
-			} else {
-				if (foundCampground.author.id.equals(req.user.id)) {
-					next()
-				} else {
-					res.redirect('back')
-				}
-			}
-		})
-	} else {
-		res.redirect('back')
-	}
-}
+let middleware			= require('../middleware')
 
 campgroundRoutes.get('/' , (req, res) => {
 	// console.log(req.user)
@@ -40,7 +14,7 @@ campgroundRoutes.get('/' , (req, res) => {
 	})
 })
 
-campgroundRoutes.post('/',isLoggedIn , (req, res) => {
+campgroundRoutes.post('/', middleware.isLoggedIn , (req, res) => {
 	Campground.create({
 		name : req.body.name,
 		image : req.body.image,
@@ -59,7 +33,7 @@ campgroundRoutes.post('/',isLoggedIn , (req, res) => {
 	})
 })
 
-campgroundRoutes.get('/new', isLoggedIn ,(req, res) => {
+campgroundRoutes.get('/new', middleware.isLoggedIn ,(req, res) => {
 	res.render('campgrounds/new')
 })
 
@@ -74,14 +48,14 @@ campgroundRoutes.get('/:id', (req, res) => {
 })
 
 // Edit campgrounds
-campgroundRoutes.get('/:id/edit',checkCampgroundOwnership ,(req, res) => {
+campgroundRoutes.get('/:id/edit',middleware.checkCampgroundOwnership ,(req, res) => {
 	Campground.findById(req.params.id, (err, foundCampground) => {
 		res.render('campgrounds/edit', {campground: foundCampground})
 	})
 })
 
 // Update campgrounds
-campgroundRoutes.put('/:id',checkCampgroundOwnership , (req, res) => {
+campgroundRoutes.put('/:id',middleware.checkCampgroundOwnership , (req, res) => {
 	Campground.findByIdAndUpdate(req.params.id, req.body.campground, (err, updatedCampground) => {
 		if (err) {
 			res.redirect('/campgrounds')
@@ -91,7 +65,7 @@ campgroundRoutes.put('/:id',checkCampgroundOwnership , (req, res) => {
 	})
 })
 // Destroy Campground
-campgroundRoutes.delete('/:id',checkCampgroundOwnership , (req, res) => {
+campgroundRoutes.delete('/:id',middleware.checkCampgroundOwnership , (req, res) => {
 	Campground.findByIdAndRemove(req.params.id, (err) => {
 		if (err) {
 			res.redirect('/campgrounds')
