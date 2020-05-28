@@ -23,16 +23,18 @@
 							Submitted By <cite title="Source Title"><%= campground.author.username%></cite>
 						</footer>
 					</blockquote>
+					<% if(currentUser && campground.author.id.equals(currentUser._id)) { %>
 					<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" class="list-inline">
 						<a href="/campgrounds/<%= campground._id %>/edit" type="button" class="btn btn-outline-warning px-5 rounded-lg list-inline-item">Edit</a>
 						<button class="btn btn-danger px-5 rounded-lg list-inline-item">Delete</button>
 					</form>
+					<% } %>
 				</div>
 			</div>
 			<br>
 			<div class="card bg-light p-4" style="width: 100%;">
 				<div class="text-right">
-					<a class="btn btn-success mt-3" href="/campgrounds/<%= campground._id %>/comments/new">Add a review</a>
+					<a class="btn btn-success mt-3" href="/campgrounds/<%= campground._id %>/comments/new">Add new comment</a>
 				</div>
 				<hr>
 				<% for (let i = 0; i < campground.comments.length ; i++) { %>
@@ -43,6 +45,12 @@
 							<p>
 								<%= campground.comments[i].text %>
 							</p>
+							<% if(currentUser && campground.comments[i].author.id.equals(currentUser._id)) { %>
+								<form action='/campgrounds/<%= campground._id %>/comments/<%= campground.comments[i]._id%>?_method=DELETE' method='POST'>
+									<a class="btn btn-sm btn-warning" href="/campgrounds/<%= campground._id %>/comments/<%= campground.comments[i]._id%>/edit">Edit</a>
+									<button type="submit" class="btn btn-sm btn-danger">Delete</button>
+								</form>
+							<% } %>
 						</div>
 					</div>
 				<% } %>
