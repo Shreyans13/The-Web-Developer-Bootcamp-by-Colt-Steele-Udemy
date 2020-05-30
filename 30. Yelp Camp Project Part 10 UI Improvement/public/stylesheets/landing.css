@@ -76,6 +76,10 @@ body {
 	}
 }
 
+.glow {
+  	text-shadow: -4px 3px 0 #3a50d9, -14px 7px 0 #0a0e27;
+}
+
 /* Older browser support - class added by modernizr */
 .no-cssanimations .slideshow li {
 opacity: 1;
