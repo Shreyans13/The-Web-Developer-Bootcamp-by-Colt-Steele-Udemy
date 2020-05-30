@@ -1,0 +1,33 @@
+Yelp Camp
+https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6754188#questions/6472948
+
+YelpCamp Payment System with Stripe
+	https://www.youtube.com/watch?v=y-nwhZUe_gw&feature=youtu.be
+Bug 1
+	http://webdev.slides.com/nax3t/yelpcamp-refactor-ui#/17
+Google Maps API - YelpCamp Tutorial
+	https://www.youtube.com/watch?v=B4OuCjQLJ9k
+YelpCamp Refactor - Moment JS
+	http://webdev.slides.com/nax3t/yelpcamp-refactor-moment#/7
+Admin User Role Authorization - YelpCamp Tutorial
+	https://www.youtube.com/watch?v=somc45pnM2k
+Creating User Profiles with Node JS - YelpCamp Tutorial
+	https://www.youtube.com/watch?v=6ar77jZ_ajc&feature=youtu.be
+Node JS Password Reset Walkthrough - YelpCamp Tutorial
+	https://www.youtube.com/watch?v=UV9FvlTySGg&feature=youtu.be
+How to Create Fuzzy Search with Express JS and Mongoose
+	https://www.youtube.com/watch?v=9_lKMTXVk64&feature=youtu.be
+Image Upload with Node - Part 1
+	https://www.youtube.com/watch?v=RHd4rP9U9SA&feature=youtu.be
+YelpCamp Notifications Walk-through
+	https://www.youtube.com/watch?v=Tt9orKnUiEU
+Yelp Camp Slugs Implementation
+	https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6754188#questions/6472948
+Yelp Camp Like button
+	https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6754188#questions/6751932
+Yelp Camp Reviews
+	https://github.com/zarkomaslaric/yelpcamp-review-system/blob/master/readme.md
+Yelp Camp collapsible comment section
+	https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6754188#questions/3190558
+Yelp Camp Pagination feature
+	https://www.udemy.com/course/the-web-developer-bootcamp/learn/lecture/6754188#questions/3190496
