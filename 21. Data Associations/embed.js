@@ -22,54 +22,54 @@ let UserSchema = new mongoose.Schema({
 })
 let User = mongoose.model('User', UserSchema)
 
-// let newUser = new User({
-// 	email : 'hermione@hogwarts.edu',
-// 	name  : 'Herminoe Granger'  
-// })
+let newUser = new User({
+	email : 'hermione@hogwarts.edu',
+	name  : 'Herminoe Granger'  
+})
 
-// newUser.posts.push({
-// 	title   : 'how to bre poly juice portion',
-// 	content : 'Just Kidding. Go to portions class to learn it!' 
-// })
+newUser.posts.push({
+	title   : 'how to bre poly juice portion',
+	content : 'Just Kidding. Go to portions class to learn it!' 
+})
 
-// newUser.save((err, user) => {
-// 	if(err){
-// 		console.log(err)
-// 	} else {
-// 		console.log(user)
-// 	}
-// })
+newUser.save((err, user) => {
+	if(err){
+		console.log(err)
+	} else {
+		console.log(user)
+	}
+})
 
-	// let newPost = new Post({
-	// 	title   : 'Charlie`s post',
-	// 	content : 'The post of Charlie' 
-	// })
+	let newPost = new Post({
+		title   : 'Charlie`s post',
+		content : 'The post of Charlie' 
+	})
 
-	// newPost.save((err, post) => {
-	// 	if(err) {
-	// 		console.log(err)
-	// 	} else {
-	// 		console.log(post)
-	// 	}
-	// })
+	newPost.save((err, post) => {
+		if(err) {
+			console.log(err)
+		} else {
+			console.log(post)
+		}
+	})
 
 
-// User.findOne({name: 'Herminoe Granger'}, (err, user) => {
-// 	if (err) {
-// 		console.log(err)
-// 	} else {
-// 		// console.log(user)
-// 		user.posts.push({
-// 			title: "The project",
-// 			content : "IDKWAWT"
-// 		})
+User.findOne({name: 'Herminoe Granger'}, (err, user) => {
+	if (err) {
+		console.log(err)
+	} else {
+		// console.log(user)
+		user.posts.push({
+			title: "The project",
+			content : "IDKWAWT"
+		})
 
-// 		user.save((err, user) => {
-// 			if(err) {
-// 				console.log(err)
-// 			} else {
-// 				console.log(user)
-// 			}
-// 		})
-// 	}
-// })
+		user.save((err, user) => {
+			if(err) {
+				console.log(err)
+			} else {
+				console.log(user)
+			}
+		})
+	}
+})
