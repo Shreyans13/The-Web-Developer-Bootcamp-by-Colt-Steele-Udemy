@@ -15,6 +15,6 @@
     "express-sanitizer": "^1.0.5",
     "fomantic-ui": "^2.8.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.9.15"
+    "mongoose": "^5.9.19"
   }
 }
