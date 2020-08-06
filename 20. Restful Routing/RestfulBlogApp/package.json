@@ -4,7 +4,9 @@
   "description": "A Simple Blog based on Express",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Shreyans Jain",
   "license": "ISC",
@@ -15,6 +17,8 @@
     "express-sanitizer": "^1.0.5",
     "fomantic-ui": "^2.8.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.9.15"
-  }
+    "mongoose": "^5.9.15",
+    "snyk": "^1.369.3"
+  },
+  "snyk": true
 }
