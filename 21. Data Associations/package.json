@@ -9,6 +9,6 @@
   "author": "Shreyans Jain",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.9.15"
+    "mongoose": "^5.9.25"
   }
 }
